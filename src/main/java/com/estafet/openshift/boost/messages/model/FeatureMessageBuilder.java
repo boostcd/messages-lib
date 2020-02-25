@@ -1,7 +1,5 @@
 package com.estafet.openshift.boost.messages.model;
 
-import com.estafet.openshift.boost.messages.model.FeatureMessage.Status;
-
 public class FeatureMessageBuilder {
 
 	private String commitId;
@@ -10,7 +8,7 @@ public class FeatureMessageBuilder {
 
 	private String description;
 
-	private Status status;
+	private FeatureStatus featureStatus;
 	
 	private String lastUpdated;
 
@@ -29,8 +27,8 @@ public class FeatureMessageBuilder {
 		return this;
 	}
 
-	public FeatureMessageBuilder setStatus(Status status) {
-		this.status = status;
+	public FeatureMessageBuilder setStatus(FeatureStatus featureStatus) {
+		this.featureStatus = featureStatus;
 		return this;
 	}
 
@@ -44,7 +42,7 @@ public class FeatureMessageBuilder {
 		message.setCommitId(commitId);
 		message.setDescription(description);
 		message.setLastUpdated(lastUpdated);
-		message.setStatus(status);
+		message.setStatus(featureStatus);
 		message.setTitle(title);
 		return message;
 	}

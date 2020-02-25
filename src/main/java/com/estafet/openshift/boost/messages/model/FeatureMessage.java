@@ -6,17 +6,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class FeatureMessage {
 
-	enum Status {
-		NOT_STARTED, IN_PROGRESS, DONE
-	}
-
 	private String commitId;
 
 	private String title;
 
 	private String description;
 
-	private Status status;
+	private FeatureStatus status;
 	
 	private String lastUpdated;
 
@@ -44,11 +40,11 @@ public class FeatureMessage {
 		this.description = description;
 	}
 
-	public Status getStatus() {
+	public FeatureStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(FeatureStatus status) {
 		this.status = status;
 	}
 
