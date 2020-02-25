@@ -1,8 +1,5 @@
 package com.estafet.openshift.boost.messages.model;
 
-import java.text.ParseException;
-
-import com.estafet.openshift.boost.commons.lib.date.DateUtils;
 import com.estafet.openshift.boost.messages.model.FeatureMessage.Status;
 
 public class FeatureMessageBuilder {
@@ -46,11 +43,7 @@ public class FeatureMessageBuilder {
 		FeatureMessage message = new FeatureMessage();
 		message.setCommitId(commitId);
 		message.setDescription(description);
-		try {
-			message.setLastUpdated(DateUtils.dateFormat.parse(lastUpdated));
-		} catch (ParseException e) {
-			throw new RuntimeException(e);
-		}
+		message.setLastUpdated(lastUpdated);
 		message.setStatus(status);
 		message.setTitle(title);
 		return message;

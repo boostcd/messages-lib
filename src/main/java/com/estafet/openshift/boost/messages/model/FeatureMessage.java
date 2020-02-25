@@ -1,7 +1,6 @@
 package com.estafet.openshift.boost.messages.model;
 
 import java.io.IOException;
-import java.util.Date;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -19,7 +18,7 @@ public class FeatureMessage {
 
 	private Status status;
 	
-	private Date lastUpdated;
+	private String lastUpdated;
 
 	public String getCommitId() {
 		return commitId;
@@ -53,11 +52,11 @@ public class FeatureMessage {
 		this.status = status;
 	}
 
-	public Date getLastUpdated() {
+	public String getLastUpdated() {
 		return lastUpdated;
 	}
 
-	public void setLastUpdated(Date lastUpdated) {
+	public void setLastUpdated(String lastUpdated) {
 		this.lastUpdated = lastUpdated;
 	}
 
