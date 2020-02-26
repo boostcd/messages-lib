@@ -4,11 +4,11 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class CommitMessage {
+public class UnmatchedCommitMessage {
 
 	private String commitId;
+	
 	private String repo;
-	private String message;
 
 	public String getCommitId() {
 		return commitId;
@@ -25,22 +25,14 @@ public class CommitMessage {
 	public void setRepo(String repo) {
 		this.repo = repo;
 	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	
+	public static UnmatchedCommitMessageBuilder builder() {
+		return new UnmatchedCommitMessageBuilder();
 	}
 	
-	public static CommitMessageBuilder builder() {
-		return new CommitMessageBuilder();
-	}
-	
-    public static CommitMessage fromJSON(String message) {
+    public static UnmatchedCommitMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, CommitMessage.class);
+            return new ObjectMapper().readValue(message, UnmatchedCommitMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

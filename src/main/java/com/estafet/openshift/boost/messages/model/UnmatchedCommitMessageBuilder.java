@@ -1,33 +1,26 @@
 package com.estafet.openshift.boost.messages.model;
 
-public class CommitMessageBuilder {
+public class UnmatchedCommitMessageBuilder {
 
 	private String commitId;
 	private String repo;
-	private String message;
 
-	public CommitMessageBuilder setRepo(String repo) {
+	public UnmatchedCommitMessageBuilder setRepo(String repo) {
 		this.repo = repo;
 		return this;
 	}
 
-	public CommitMessageBuilder setCommitId(String commitId) {
+	public UnmatchedCommitMessageBuilder setCommitId(String commitId) {
 		this.commitId = commitId;
 		return this;
 	}
 
-	public CommitMessageBuilder setMessage(String message) {
-		this.message = message;
-		return this;
-	}
-
-	public CommitMessage build() {
-		nullCheck("commitId", "repo", "message");
-		CommitMessage commitMessage = new CommitMessage();
-		commitMessage.setCommitId(commitId);
-		commitMessage.setRepo(repo);
-		commitMessage.setMessage(message);
-		return commitMessage;
+	public UnmatchedCommitMessage build() {
+		nullCheck("commitId", "repo");
+		UnmatchedCommitMessage unmatchedCommitMessage = new UnmatchedCommitMessage();
+		unmatchedCommitMessage.setCommitId(commitId);
+		unmatchedCommitMessage.setRepo(repo);
+		return unmatchedCommitMessage;
 	}
 
 	private void nullCheck(String...fields) {

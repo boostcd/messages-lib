@@ -7,13 +7,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class FeatureMessage {
 
 	private String commitId;
-
+	private String repo;
+	private String featureId;
 	private String title;
-
 	private String description;
-
 	private FeatureStatus status;
-	
 	private String lastUpdated;
 
 	public String getCommitId() {
@@ -22,6 +20,22 @@ public class FeatureMessage {
 
 	public void setCommitId(String commitId) {
 		this.commitId = commitId;
+	}
+
+	public String getRepo() {
+		return repo;
+	}
+
+	public void setRepo(String repo) {
+		this.repo = repo;
+	}
+
+	public String getFeatureId() {
+		return featureId;
+	}
+
+	public void setFeatureId(String featureId) {
+		this.featureId = featureId;
 	}
 
 	public String getTitle() {
@@ -59,21 +73,21 @@ public class FeatureMessage {
 	public static FeatureMessageBuilder builder() {
 		return new FeatureMessageBuilder();
 	}
-	
-    public static FeatureMessage fromJSON(String message) {
-        try {
-            return new ObjectMapper().readValue(message, FeatureMessage.class);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
-    public String toJSON() {
-        try {
-            return new ObjectMapper().writeValueAsString(this);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-	
+	public static FeatureMessage fromJSON(String message) {
+		try {
+			return new ObjectMapper().readValue(message, FeatureMessage.class);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public String toJSON() {
+		try {
+			return new ObjectMapper().writeValueAsString(this);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 }
