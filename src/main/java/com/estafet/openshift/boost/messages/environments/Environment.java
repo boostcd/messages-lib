@@ -1,7 +1,10 @@
 package com.estafet.openshift.boost.messages.environments;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Environment {
 
@@ -48,5 +51,21 @@ public class Environment {
 	public void setApps(List<EnvironmentApp> apps) {
 		this.apps = apps;
 	}
+	
+    public static Environment fromJSON(String message) {
+        try {
+            return new ObjectMapper().readValue(message, Environment.class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String toJSON() {
+        try {
+            return new ObjectMapper().writeValueAsString(this);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }
