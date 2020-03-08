@@ -1,14 +1,14 @@
-package com.estafet.openshift.boost.messages.model;
+package com.estafet.openshift.boost.messages.features;
 
 import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class UnmatchedCommitMessage {
+public class CommitMessage {
 
 	private String commitId;
-	
 	private String repo;
+	private String message;
 
 	public String getCommitId() {
 		return commitId;
@@ -25,14 +25,22 @@ public class UnmatchedCommitMessage {
 	public void setRepo(String repo) {
 		this.repo = repo;
 	}
-	
-	public static UnmatchedCommitMessageBuilder builder() {
-		return new UnmatchedCommitMessageBuilder();
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
-    public static UnmatchedCommitMessage fromJSON(String message) {
+	public static CommitMessageBuilder builder() {
+		return new CommitMessageBuilder();
+	}
+	
+    public static CommitMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, UnmatchedCommitMessage.class);
+            return new ObjectMapper().readValue(message, CommitMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

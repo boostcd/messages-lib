@@ -1,4 +1,4 @@
-package com.estafet.openshift.boost.messages.model;
+package com.estafet.openshift.boost.messages.features;
 
 import java.io.IOException;
 

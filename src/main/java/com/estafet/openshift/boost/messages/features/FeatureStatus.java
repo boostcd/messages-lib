@@ -1,4 +1,4 @@
-package com.estafet.openshift.boost.messages.model;
+package com.estafet.openshift.boost.messages.features;
 
 public enum FeatureStatus {
 	NOT_STARTED("Not Started"),

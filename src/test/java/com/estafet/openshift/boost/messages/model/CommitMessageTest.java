@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.estafet.openshift.boost.messages.features.CommitMessage;
+import com.estafet.openshift.boost.messages.features.MissingFieldException;
+
 public class CommitMessageTest {
 
 	@Test(expected = MissingFieldException.class)
