@@ -13,6 +13,15 @@ public class FeatureMessage {
 	private String description;
 	private FeatureStatus status;
 	private String lastUpdated;
+	private String featureURL;
+
+	public String getFeatureURL() {
+		return featureURL;
+	}
+
+	public void setFeatureURL(String featureURL) {
+		this.featureURL = featureURL;
+	}
 
 	public String getCommitId() {
 		return commitId;

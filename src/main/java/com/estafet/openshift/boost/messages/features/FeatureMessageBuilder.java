@@ -9,6 +9,12 @@ public class FeatureMessageBuilder {
 	private String description;
 	private FeatureStatus status;
 	private String lastUpdated;
+	private String featureURL;
+
+	public FeatureMessageBuilder setFeatureURL(String featureURL) {
+		this.featureURL = featureURL;
+		return this;
+	}
 
 	public FeatureMessageBuilder setCommitId(String commitId) {
 		this.commitId = commitId;
@@ -46,7 +52,15 @@ public class FeatureMessageBuilder {
 	}
 
 	public FeatureMessage build() {
-		nullCheck("commitId", "description", "lastUpdated", "status", "title", "repo", "featureId");
+		nullCheck(
+				"commitId", 
+				"description", 
+				"lastUpdated", 
+				"status", 
+				"title", 
+				"repo", 
+				"featureId", 
+				"featureURL");
 		FeatureMessage message = new FeatureMessage();
 		message.setCommitId(commitId);
 		message.setDescription(description);
@@ -55,6 +69,7 @@ public class FeatureMessageBuilder {
 		message.setTitle(title);
 		message.setRepo(repo);
 		message.setFeatureId(featureId);
+		message.setFeatureURL(featureURL);
 		return message;
 	}
 
