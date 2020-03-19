@@ -26,7 +26,7 @@ public class EnvironmentAppBuilder {
 	}
 	
 	public EnvironmentApp build() {
-		nullCheck("name", "version", "deployedDate");
+		nullCheck("name", "version");
 		EnvironmentApp app = new EnvironmentApp();
 		app.setDeployedDate(deployedDate);
 		app.setName(name);
