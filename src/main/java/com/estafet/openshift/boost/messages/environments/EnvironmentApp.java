@@ -5,32 +5,39 @@ import com.estafet.openshift.boost.messages.features.MissingFieldException;
 public class EnvironmentApp {
 
 	private String name;
-	
 	private String version;
-
 	private String deployedDate;
+	private boolean deployed;
 
-	public final String getName() {
+	public boolean isDeployed() {
+		return deployed;
+	}
+
+	public void setDeployed(boolean deployed) {
+		this.deployed = deployed;
+	}
+
+	public String getName() {
 		return name;
 	}
 
-	public final void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public final String getVersion() {
+	public String getVersion() {
 		return version;
 	}
 
-	public final void setVersion(String version) {
+	public void setVersion(String version) {
 		this.version = version;
 	}
 
-	public final String getDeployedDate() {
+	public String getDeployedDate() {
 		return deployedDate;
 	}
 
-	public final void setDeployedDate(String deployedDate) {
+	public void setDeployedDate(String deployedDate) {
 		this.deployedDate = deployedDate;
 	}
 	
@@ -41,12 +48,16 @@ public class EnvironmentApp {
 	public static class EnvironmentAppBuilder {
 
 		private String name;
-		
 		private String version;
-
 		private String deployedDate;
+		private boolean deployed;
 		
 		private EnvironmentAppBuilder( ) { }
+
+		public EnvironmentAppBuilder setDeployed(boolean deployed) {
+			this.deployed = deployed;
+			return this;
+		}
 
 		public EnvironmentAppBuilder setName(String name) {
 			this.name = name;
@@ -67,6 +78,7 @@ public class EnvironmentApp {
 			nullCheck("name", "version");
 			EnvironmentApp app = new EnvironmentApp();
 			app.setDeployedDate(deployedDate);
+			app.setDeployed(deployed);
 			app.setName(name);
 			app.setVersion(version);
 			return app;
