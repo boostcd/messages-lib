@@ -10,17 +10,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Environment {
 
 	private String name;
-
+	private String displayName;
 	private String updatedDate;
-
 	private Boolean live;
-
 	private Boolean tested;
 
 	private List<EnvironmentApp> apps = new ArrayList<EnvironmentApp>();
 
 	public void addApp(EnvironmentApp app) {
 		apps.add(app);
+	}
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 	public Boolean getTested() {
@@ -95,11 +101,17 @@ public class Environment {
 	public static class EnvironmentBuilder {
 
 		private String name;
+		private String displayName;
 		private String updatedDate;
 		private Boolean live;
 		private Boolean tested;
 
 		private EnvironmentBuilder() {
+		}
+
+		public EnvironmentBuilder setDisplayName(String displayName) {
+			this.displayName = displayName;
+			return this;
 		}
 
 		public EnvironmentBuilder setTested(Boolean tested) {
@@ -123,12 +135,13 @@ public class Environment {
 		}
 
 		public Environment build() {
-			nullCheck("name", "updatedDate", "live");
+			nullCheck("name", "updatedDate", "live", "displayName");
 			Environment environment = new Environment();
 			environment.setName(name);
 			environment.setLive(live);
 			environment.setUpdatedDate(updatedDate);
 			environment.setTested(tested);
+			environment.setDisplayName(displayName);
 			return environment;
 		}
 
