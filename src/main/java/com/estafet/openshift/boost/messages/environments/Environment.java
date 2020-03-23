@@ -14,11 +14,20 @@ public class Environment {
 	private String updatedDate;
 	private Boolean live;
 	private Boolean tested;
+	private String next;
 
 	private List<EnvironmentApp> apps = new ArrayList<EnvironmentApp>();
 
 	public void addApp(EnvironmentApp app) {
 		apps.add(app);
+	}
+
+	public String getNext() {
+		return next;
+	}
+
+	public void setNext(String next) {
+		this.next = next;
 	}
 
 	public String getDisplayName() {
@@ -105,8 +114,14 @@ public class Environment {
 		private String updatedDate;
 		private Boolean live;
 		private Boolean tested;
+		private String next;
 
 		private EnvironmentBuilder() {
+		}
+
+		public EnvironmentBuilder setNext(String next) {
+			this.next = next;
+			return this;
 		}
 
 		public EnvironmentBuilder setDisplayName(String displayName) {
@@ -142,6 +157,7 @@ public class Environment {
 			environment.setUpdatedDate(updatedDate);
 			environment.setTested(tested);
 			environment.setDisplayName(displayName);
+			environment.setNext(next);
 			return environment;
 		}
 
