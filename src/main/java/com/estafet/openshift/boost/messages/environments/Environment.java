@@ -150,7 +150,7 @@ public class Environment {
 		}
 
 		public Environment build() {
-			nullCheck("name", "updatedDate", "live", "displayName");
+			nullCheck("name", "updatedDate", "displayName");
 			Environment environment = new Environment();
 			environment.setName(name);
 			environment.setLive(live);
