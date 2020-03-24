@@ -45,6 +45,12 @@ public class EnvironmentApp {
 		return new EnvironmentAppBuilder();
 	}
 	
+	@Override
+	public String toString() {
+		return "EnvironmentApp [name=" + name + ", version=" + version + ", deployedDate=" + deployedDate
+				+ ", deployed=" + deployed + "]";
+	}
+
 	public static class EnvironmentAppBuilder {
 
 		private String name;

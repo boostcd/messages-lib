@@ -103,6 +103,12 @@ public class Environment {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "Environment [name=" + name + ", displayName=" + displayName + ", updatedDate=" + updatedDate + ", live="
+				+ live + ", tested=" + tested + ", next=" + next + "]";
+	}
+
 	public static EnvironmentBuilder builder() {
 		return new EnvironmentBuilder();
 	}
