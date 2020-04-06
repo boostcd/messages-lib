@@ -53,9 +53,8 @@ public class FeatureMessageBuilder {
 
 	public FeatureMessage build() {
 		nullCheck(
-				"commitId", 
-				"description", 
-				"lastUpdated", 
+				"commitId",
+				"lastUpdated",
 				"status", 
 				"title", 
 				"repo", 
