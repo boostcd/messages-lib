@@ -4,6 +4,12 @@ public class UnmatchedCommitMessageBuilder {
 
 	private String commitId;
 	private String repo;
+	private String message;
+
+	public UnmatchedCommitMessageBuilder setMessage(String message) {
+		this.message = message;
+		return this;
+	}
 
 	public UnmatchedCommitMessageBuilder setRepo(String repo) {
 		this.repo = repo;
@@ -16,8 +22,9 @@ public class UnmatchedCommitMessageBuilder {
 	}
 
 	public UnmatchedCommitMessage build() {
-		nullCheck("commitId", "repo");
+		nullCheck("commitId", "repo", "message");
 		UnmatchedCommitMessage unmatchedCommitMessage = new UnmatchedCommitMessage();
+		unmatchedCommitMessage.setMessage(message);
 		unmatchedCommitMessage.setCommitId(commitId);
 		unmatchedCommitMessage.setRepo(repo);
 		return unmatchedCommitMessage;

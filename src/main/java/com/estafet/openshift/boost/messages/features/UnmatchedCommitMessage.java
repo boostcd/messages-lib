@@ -7,8 +7,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class UnmatchedCommitMessage {
 
 	private String commitId;
-	
 	private String repo;
+	private String message;
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getCommitId() {
 		return commitId;
