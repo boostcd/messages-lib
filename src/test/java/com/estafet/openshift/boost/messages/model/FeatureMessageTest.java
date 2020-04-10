@@ -32,7 +32,6 @@ public class FeatureMessageTest {
 			.setStatus(FeatureStatus.DONE)
 			.setTitle("my title")
 			.setLastUpdated("now")
-			.setMessage("some message")
 			.setFeatureURL("www.trello.com")
 			.build();
 		assertEquals("dennis", featureMessage.getCommitId());
