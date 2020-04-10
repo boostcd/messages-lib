@@ -14,15 +14,6 @@ public class FeatureMessage {
 	private FeatureStatus status;
 	private String lastUpdated;
 	private String featureURL;
-	private String message;
-	
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getFeatureURL() {
 		return featureURL;

@@ -10,12 +10,6 @@ public class FeatureMessageBuilder {
 	private FeatureStatus status;
 	private String lastUpdated;
 	private String featureURL;
-	private String message;
-
-	public FeatureMessageBuilder setMessage(String message) {
-		this.message = message;
-		return this;
-	}
 
 	public FeatureMessageBuilder setFeatureURL(String featureURL) {
 		this.featureURL = featureURL;
@@ -64,7 +58,6 @@ public class FeatureMessageBuilder {
 				"status", 
 				"title", 
 				"repo", 
-				"message",
 				"featureId", 
 				"featureURL");
 		FeatureMessage message = new FeatureMessage();
@@ -74,7 +67,6 @@ public class FeatureMessageBuilder {
 		message.setStatus(status);
 		message.setTitle(title);
 		message.setRepo(repo);
-		message.setMessage(this.message);
 		message.setFeatureId(featureId);
 		message.setFeatureURL(featureURL);
 		return message;
