@@ -1,1 +1,1 @@
-# estafet-openshift-boost-messages-lib
+# messages-lib
