@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.estafet.boostcd</groupId>
 	<artifactId>messages-lib</artifactId>
-	<version>0.0.34-SNAPSHOT</version>
+	<version>0.0.34</version>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -81,7 +81,7 @@
 		<connection>scm:git:https://github.com/boostcd/messages-lib.git</connection>
 		<developerConnection>scm:git:https://github.com/boostcd/messages-lib.git</developerConnection>
 		<url>https://github.com/boostcd/messages-lib</url>
-		<tag>HEAD</tag>
+		<tag>messages-lib-0.0.34</tag>
 	</scm>
 
 	<name>Commons Libaries for Estafet Microservices</name>
