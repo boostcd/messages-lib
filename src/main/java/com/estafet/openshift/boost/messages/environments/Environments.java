@@ -9,6 +9,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Environments {
 
 	private String productId;
+	private String repo;
+	
 	private List<Environment> environments = new ArrayList<Environment>();
 
 	public String getProductId() {
@@ -17,6 +19,14 @@ public class Environments {
 
 	public void setProductId(String productId) {
 		this.productId = productId;
+	}
+
+	public String getRepo() {
+		return repo;
+	}
+
+	public void setRepo(String repo) {
+		this.repo = repo;
 	}
 
 	public List<Environment> getEnvironments() {
@@ -50,7 +60,13 @@ public class Environments {
 	public static class EnvironmentsBuilder {
 		
 		private String productId;
+		private String repo;
 		
+		public EnvironmentsBuilder setRepo(String repo) {
+			this.repo = repo;
+			return this;
+		}
+
 		public EnvironmentsBuilder setProductId(String productId) {
 			this.productId = productId;
 			return this;
@@ -59,6 +75,7 @@ public class Environments {
 		public Environments build() {
 			Environments environments = new Environments();
 			environments.setProductId(productId);
+			environments.setRepo(repo);
 			return environments;
 		}
 		
