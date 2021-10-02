@@ -1,4 +1,4 @@
-package com.estafet.openshift.boost.messages.environments;
+package io.boostcd.messages.environments;
 
 import java.io.IOException;
 import java.util.ArrayList;

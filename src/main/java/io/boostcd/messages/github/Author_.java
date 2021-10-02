@@ -1,5 +1,4 @@
-
-package com.estafet.openshift.boost.messages.github;
+package io.boostcd.messages.github;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

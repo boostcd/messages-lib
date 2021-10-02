@@ -1,4 +1,4 @@
-package com.estafet.openshift.boost.messages.users;
+package io.boostcd.messages.users;
 
 
 public class User {

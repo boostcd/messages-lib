@@ -1,12 +1,8 @@
-package com.estafet.openshift.boost.messages.model;
+package io.boostcd.messages.features;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import com.estafet.openshift.boost.messages.features.FeatureMessage;
-import com.estafet.openshift.boost.messages.features.FeatureStatus;
-import com.estafet.openshift.boost.messages.features.MissingFieldException;
 
 public class FeatureMessageTest {
 

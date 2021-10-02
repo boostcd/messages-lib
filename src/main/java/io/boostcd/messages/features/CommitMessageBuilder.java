@@ -1,4 +1,4 @@
-package com.estafet.openshift.boost.messages.features;
+package io.boostcd.messages.features;
 
 public class CommitMessageBuilder {
 

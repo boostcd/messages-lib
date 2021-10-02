@@ -1,11 +1,12 @@
-package com.estafet.openshift.boost.messages.environments;
+package io.boostcd.messages.environments;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.estafet.openshift.boost.messages.features.MissingFieldException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.boostcd.messages.features.MissingFieldException;
 
 public class Environment {
 

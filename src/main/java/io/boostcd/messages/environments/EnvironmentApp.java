@@ -1,6 +1,6 @@
-package com.estafet.openshift.boost.messages.environments;
+package io.boostcd.messages.environments;
 
-import com.estafet.openshift.boost.messages.features.MissingFieldException;
+import io.boostcd.messages.features.MissingFieldException;
 
 public class EnvironmentApp {
 
