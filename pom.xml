@@ -1,12 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.estafet.boostcd</groupId>
+	<groupId>io.boostcd</groupId>
 	<artifactId>messages-lib</artifactId>
-	<version>0.0.36-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>Libaries for Microservices Messages</name>
+	<url>https://github.com/boostcd/messages-lib</url>
+	<description>This library provides common messages required for microservices.</description>
 
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
 	<profiles>
@@ -83,10 +87,5 @@
 		<url>https://github.com/boostcd/messages-lib</url>
 		<tag>HEAD</tag>
 	</scm>
-
-	<name>Commons Libaries for Estafet Microservices</name>
-	<url>https://github.com/boostcd/messages-lib</url>
-	<description>This library provides common functionality required for microservices.</description>
-
 
 </project>
