@@ -1,7 +1,7 @@
 package io.boostcd.messages.environments;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,7 +17,7 @@ public class Environment {
 	private Boolean tested;
 	private String next;
 
-	private List<EnvironmentApp> apps = new ArrayList<EnvironmentApp>();
+	private List<EnvironmentApp> apps = new LinkedList<EnvironmentApp>();
 
 	public void addApp(EnvironmentApp app) {
 		apps.add(app);
@@ -126,32 +126,32 @@ public class Environment {
 		private EnvironmentBuilder() {
 		}
 
-		public EnvironmentBuilder setNext(String next) {
+		public EnvironmentBuilder next(String next) {
 			this.next = next;
 			return this;
 		}
 
-		public EnvironmentBuilder setDisplayName(String displayName) {
+		public EnvironmentBuilder displayName(String displayName) {
 			this.displayName = displayName;
 			return this;
 		}
 
-		public EnvironmentBuilder setTested(Boolean tested) {
+		public EnvironmentBuilder tested(Boolean tested) {
 			this.tested = tested;
 			return this;
 		}
 
-		public EnvironmentBuilder setName(String name) {
+		public EnvironmentBuilder name(String name) {
 			this.name = name;
 			return this;
 		}
 
-		public EnvironmentBuilder setUpdatedDate(String updatedDate) {
+		public EnvironmentBuilder updatedDate(String updatedDate) {
 			this.updatedDate = updatedDate;
 			return this;
 		}
 
-		public EnvironmentBuilder setLive(Boolean live) {
+		public EnvironmentBuilder live(Boolean live) {
 			this.live = live;
 			return this;
 		}
